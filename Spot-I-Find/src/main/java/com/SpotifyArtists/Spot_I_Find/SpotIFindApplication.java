@@ -9,5 +9,5 @@ public class SpotIFindApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpotIFindApplication.class, args);
 	}
-
+int age;
 }
