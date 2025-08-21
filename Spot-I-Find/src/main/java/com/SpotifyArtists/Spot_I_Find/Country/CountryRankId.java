@@ -2,11 +2,15 @@ package com.SpotifyArtists.Spot_I_Find.Country;
 
 import java.io.Serializable;
 import java.util.Objects;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class CountryRankId implements Serializable {
+
+    @Column(name = "country_name")  // maps to your existing column
     private String country;
+
     private int rank;
 
     public CountryRankId() {}
