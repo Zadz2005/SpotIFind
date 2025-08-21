@@ -44,7 +44,7 @@ public class CountryService {
             Country countryToUpdate = existingCountry.get();
 
             // Update the artist
-            countryToUpdate.setArtist(updatedCountry.getArtist());
+            countryToUpdate.setartist(updatedCountry.getartist());
 
             // Save changes
             countryRepository.save(countryToUpdate);
@@ -55,7 +55,7 @@ public class CountryService {
     }
     @Transactional
     public void deleteArtist(String artistName) {
-        countryRepository.deleteByArtist(artistName);
+        countryRepository.deleteByartist(artistName);
     }
     @Transactional
     public void deleteCountry(String countryName) {

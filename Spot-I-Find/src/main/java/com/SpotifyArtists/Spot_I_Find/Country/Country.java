@@ -12,7 +12,7 @@ public class Country {
 
 
 
-    private String Artist;
+    private String artist;
 
 
 
@@ -24,15 +24,15 @@ public class Country {
 
     public Country(CountryRankId id, String artist) {
         this.id = id;
-        this.Artist = artist;
+        this.artist = artist;
     }
 
     // Getters and setters
     public CountryRankId getId() { return id; }
     public void setId(CountryRankId id) { this.id = id; }
 
-    public String getArtist() { return Artist; }
-    public void setArtist(String artist) { this.Artist = artist; }
+    public String getartist() { return artist; }
+    public void setartist(String Artist) { this.artist = Artist; }
 
     // Convenience getters for the composite key fields
     public String getCountry() { return id.getCountry(); }
