@@ -32,7 +32,7 @@ public class CountryService {
         //        .collect(Collectors.toList());
     //}
 
-    public Country addPlayer(Country country) {
+    public Country addCountry(Country country) {
         countryRepository.save(country);
         return country;
     }
@@ -57,6 +57,11 @@ public class CountryService {
     public void deleteArtist(String artistName) {
         countryRepository.deleteByArtist(artistName);
     }
+    @Transactional
+    public void deleteCountry(String countryName) {
+        countryRepository.deleteByIdCountryIgnoreCase(countryName);
+    }
+
 
 
 }
