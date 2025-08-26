@@ -8,10 +8,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
+
 public class CountryRankId implements Serializable {
 
     @Column(name = "country_name")  // maps to your existing column
-    @JsonUnwrapped
+
     private String country;
 
     private int rank;

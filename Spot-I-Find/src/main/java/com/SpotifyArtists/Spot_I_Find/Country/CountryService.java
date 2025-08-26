@@ -27,9 +27,9 @@ public class CountryService {
 
 
     //public List<Country> searchArtistsInCountry(String countryName, String searchText) {
-     //   return countryRepository.findByIdCountryIgnoreCase(countryName).stream()
-      //          .filter(c -> c.getArtist().toLowerCase().contains(searchText.toLowerCase()))
-        //        .collect(Collectors.toList());
+    //   return countryRepository.findByIdCountryIgnoreCase(countryName).stream()
+    //          .filter(c -> c.getArtist().toLowerCase().contains(searchText.toLowerCase()))
+    //        .collect(Collectors.toList());
     //}
 
     public Country addCountry(Country country) {
@@ -65,7 +65,3 @@ public class CountryService {
 
 
 }
-
-
-
-

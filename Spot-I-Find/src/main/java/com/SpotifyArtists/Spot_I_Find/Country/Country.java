@@ -1,13 +1,18 @@
 package com.SpotifyArtists.Spot_I_Find.Country;
 
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name="artists_per_country")
 public class Country {
 
     @EmbeddedId
+    @JsonUnwrapped
     private CountryRankId id;
 
 
