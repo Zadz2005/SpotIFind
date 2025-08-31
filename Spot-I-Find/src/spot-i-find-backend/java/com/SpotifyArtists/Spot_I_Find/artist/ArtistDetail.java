@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class ArtistDetail {
 
     @EmbeddedId
-    @JsonUnwrapped
+@JsonUnwrapped
     private ArtistDetailId id;
     public String getTitle() {
         return id.getTitle();
@@ -32,13 +32,14 @@ public class ArtistDetail {
     private Integer de;
     private Integer ph;
 
-    @Column(name = "in")   // reserved word in SQL
-    private Integer inRank;
+    @Column(name = "in_rank")
+    private Integer IN;
+
 
     private Integer br;
 
     @Column(name = "id")   // reserved word in Java
-    private Integer idRank;
+    private Integer ID;
 
     private Integer fr;
     private Integer nl;
@@ -72,6 +73,7 @@ public class ArtistDetail {
 
     @Column(name = "at")
     private Integer at;
+
 
     private Integer sa;
 
@@ -107,11 +109,11 @@ public class ArtistDetail {
     private Integer bo;
     private Integer sv;
 
-    @Column(name = "is")
+    @Column(name = "is_rank")
     private Integer is;
 
-    @Column(name = "do")
-    private Integer doRank;
+    @Column(name = "do_rank")   // reserved word in Java
+    private Integer DO;
 
     private Integer ni;
     private Integer py;
@@ -208,13 +210,8 @@ public class ArtistDetail {
         this.ph = ph;
     }
 
-    public Integer getInRank() {
-        return inRank;
-    }
 
-    public void setInRank(Integer inRank) {
-        this.inRank = inRank;
-    }
+
 
     public Integer getBr() {
         return br;
@@ -224,13 +221,7 @@ public class ArtistDetail {
         this.br = br;
     }
 
-    public Integer getIdRank() {
-        return idRank;
-    }
 
-    public void setIdRank(Integer idRank) {
-        this.idRank = idRank;
-    }
 
     public Integer getFr() {
         return fr;
@@ -673,11 +664,11 @@ public class ArtistDetail {
     }
 
     public Integer getDoRank() {
-        return doRank;
+        return DO;
     }
 
     public void setDoRank(Integer doRank) {
-        this.doRank = doRank;
+        this.DO = doRank;
     }
 
     public Integer getNi() {
