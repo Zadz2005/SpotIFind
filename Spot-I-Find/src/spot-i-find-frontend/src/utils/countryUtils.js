@@ -17,42 +17,21 @@ export const countryImageFlags = {
   // Add your custom image mappings here
   // Format: 'US': 'us.png', 'GB': 'uk.png', etc.
   // Example mappings (uncomment and add your images):
-  // 'US': 'us.png',
-  // 'GB': 'uk.png',
-  // 'CA': 'ca.png',
-  // 'AU': 'au.png',
-  // 'DE': 'de.png',
-  // 'FR': 'fr.png',
-  // 'IT': 'it.png',
-  // 'ES': 'es.png',
-  // 'JP': 'jp.png',
-  // 'BR': 'br.png',
+  'US': 'us.png',
+   'GB': 'uk.png',
+  'AT': 'at.png',
+   'AU': 'au.png',
+  'AD': 'ad.png',
+  'AR': 'ar.png',
+
 };
 
 export function getCountryCode(countryName) {
   // Comprehensive mapping of country names to ISO codes
   const countryCodeMap = {
     // Major countries
-    'United States': 'US', 'United Kingdom': 'GB', 'Canada': 'CA', 'Mexico': 'MX',
-    'Australia': 'AU', 'Germany': 'DE', 'Philippines': 'PH', 'India': 'IN',
-    'Brazil': 'BR', 'France': 'FR', 'Netherlands': 'NL', 'Sweden': 'SE',
-    'Italy': 'IT', 'Malaysia': 'MY', 'Norway': 'NO', 'Spain': 'ES',
-    'Poland': 'PL', 'Denmark': 'DK', 'Turkey': 'TR', 'Chile': 'CL',
-    'Singapore': 'SG', 'Portugal': 'PT', 'Belgium': 'BE', 'Thailand': 'TH',
-    'New Zealand': 'NZ', 'Argentina': 'AR', 'Switzerland': 'CH', 'Finland': 'FI',
-    'Peru': 'PE', 'Ireland': 'IE', 'Greece': 'GR', 'Colombia': 'CO',
-    'Romania': 'RO', 'South Africa': 'ZA', 'United Arab Emirates': 'AE',
-    'Czech Republic': 'CZ', 'Vietnam': 'VN', 'Hungary': 'HU', 'Austria': 'AT',
-    'Saudi Arabia': 'SA', 'Taiwan': 'TW', 'Israel': 'IL', 'Bulgaria': 'BG',
-    'Slovakia': 'SK', 'Costa Rica': 'CR', 'Ecuador': 'EC', 'Lithuania': 'LT',
-    'Hong Kong': 'HK', 'Kazakhstan': 'KZ', 'Ukraine': 'UA', 'Pakistan': 'PK',
-    'Russia': 'RU', 'Egypt': 'EG', 'Latvia': 'LV', 'Japan': 'JP',
-    'Guatemala': 'GT', 'Morocco': 'MA', 'South Korea': 'KR', 'Estonia': 'EE',
-    'Panama': 'PA', 'Honduras': 'HN', 'Bolivia': 'BO', 'El Salvador': 'SV',
-    'Iceland': 'IS', 'Dominican Republic': 'DO', 'Nicaragua': 'NI',
-    'Paraguay': 'PY', 'Uruguay': 'UY', 'Cyprus': 'CY', 'Luxembourg': 'LU',
-    'Venezuela': 'VE', 'Nigeria': 'NG', 'Malta': 'MT', 'Belarus': 'BY',
-    'Andorra': 'AD',
+    'United States': 'US', 'United Kingdom': 'GB',
+    'Australia': 'AU', 'Argentina': 'AR',  'Austria': 'AT', 'Andorra': 'AD',
     
     // Alternative spellings and variations
     'USA': 'US', 'America': 'US', 'United States of America': 'US',
