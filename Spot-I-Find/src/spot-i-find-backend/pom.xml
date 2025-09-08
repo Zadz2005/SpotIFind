@@ -48,7 +48,6 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
