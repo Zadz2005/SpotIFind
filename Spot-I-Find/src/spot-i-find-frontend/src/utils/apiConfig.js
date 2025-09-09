@@ -2,7 +2,7 @@
 // This file handles the backend API URL for different environments
 
 // Get the API URL from environment variables or use Railway production URL
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://spot-i-find-production.up.railway.app';
+const API_BASE_URL = 'https://spot-i-find-production.up.railway.app';
 
 // API endpoints
 export const API_ENDPOINTS = {
