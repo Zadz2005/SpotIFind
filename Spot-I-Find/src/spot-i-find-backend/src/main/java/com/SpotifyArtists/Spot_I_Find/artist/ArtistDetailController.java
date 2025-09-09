@@ -44,9 +44,4 @@ public class ArtistDetailController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    @Options
-    public ResponseEntity<Void> handleOptions() {
-        return ResponseEntity.ok().build();
-    }
 }

@@ -30,17 +30,12 @@ public class CountryController {
         Country createdCountry = countryservice.addCountry(country);
         return new ResponseEntity<>(createdCountry, HttpStatus.CREATED);
     }
-@PutMapping
+    @PutMapping
     public ResponseEntity<Country> updateCountry(@RequestBody Country country) {
         Country updatedCountry = countryservice.updateCountry(country);
         if(updatedCountry!= null) {
             return new ResponseEntity<>(updatedCountry, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-}
-
-    @Options
-    public ResponseEntity<Void> handleOptions() {
-        return ResponseEntity.ok().build();
     }
 }
