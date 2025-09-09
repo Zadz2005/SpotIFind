@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "src/spot-i-find-frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
