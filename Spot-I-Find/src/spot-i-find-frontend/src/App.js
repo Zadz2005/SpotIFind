@@ -83,13 +83,9 @@ function App() {
       
       {currentPage === 'artistDetails' && (
         <ArtistDetailsPage 
-          artistName={currentArtist}
-          countryName={currentCountry}
+          artist={currentArtist}
+          country={currentCountry}
           onBack={goBack}
-          onHome={goHome}
-          loading={loading}
-          setLoading={setLoading}
-          setError={setError}
         />
       )}
     </div>

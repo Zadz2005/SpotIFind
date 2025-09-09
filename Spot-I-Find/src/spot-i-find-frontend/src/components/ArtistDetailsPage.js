@@ -12,6 +12,10 @@ const ArtistDetailsPage = ({ artist, country, onBack }) => {
   }, [artist]);
 
   const cleanArtistName = (artistName) => {
+    // Check if artistName is defined and not null
+    if (!artistName) {
+      return '';
+    }
     // Remove text after " - " (dash surrounded by spaces)
     return artistName.split(' - ')[0].trim();
   };
@@ -23,6 +27,13 @@ const ArtistDetailsPage = ({ artist, country, onBack }) => {
 
       const cleanedArtistName = cleanArtistName(artist);
       console.log('Loading artist details for:', cleanedArtistName);
+
+      // Check if we have a valid artist name
+      if (!cleanedArtistName) {
+        setError('No artist name provided. Please go back and select an artist.');
+        setLoading(false);
+        return;
+      }
 
       // Fetch artist details directly by name
       const artistDetails = await fetchArtistDetailsByName(cleanedArtistName);
