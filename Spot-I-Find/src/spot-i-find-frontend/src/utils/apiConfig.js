@@ -1,8 +1,8 @@
 // API Configuration for Spot-I-Find Frontend
 // This file handles the backend API URL for different environments
 
-// Get the API URL from environment variables or use default
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+// Get the API URL from environment variables or use Railway production URL
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://spot-i-find-production.up.railway.app';
 
 // API endpoints
 export const API_ENDPOINTS = {
