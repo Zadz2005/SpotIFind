@@ -35,9 +35,19 @@ export const apiCall = async (endpoint, options = {}) => {
 
 // Specific API functions
 export const fetchCountries = () => apiCall(API_ENDPOINTS.COUNTRIES);
+export const fetchCountriesByName = (countryName) => {
+  const url = new URL(API_ENDPOINTS.COUNTRIES);
+  url.searchParams.append('countryName', countryName);
+  return apiCall(url.toString());
+};
 export const fetchArtistDetails = (params = {}) => {
   const url = new URL(API_ENDPOINTS.ARTIST_DETAILS);
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+  return apiCall(url.toString());
+};
+export const fetchArtistDetailsByName = (artistName) => {
+  const url = new URL(API_ENDPOINTS.ARTIST_DETAILS);
+  url.searchParams.append('artist', artistName);
   return apiCall(url.toString());
 };
 

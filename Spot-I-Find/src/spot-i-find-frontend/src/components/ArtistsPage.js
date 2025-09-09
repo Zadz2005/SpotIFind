@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ArtistsPage.css';
 import { getCountryFlag } from '../utils/countryUtils';
+import { fetchCountriesByName } from '../utils/apiConfig';
 
 const ArtistsPage = ({ countryName, onArtistClick, onBack, onHome, loading, setLoading, setError }) => {
   const [artists, setArtists] = useState([]);
@@ -12,12 +13,7 @@ const ArtistsPage = ({ countryName, onArtistClick, onBack, onHome, loading, setL
   const loadArtists = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/v1/Country?countryName=${encodeURIComponent(countryName)}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch artists');
-      }
-      
-      const data = await response.json();
+      const data = await fetchCountriesByName(countryName);
       console.log('📊 Artists loaded from Country table:', data);
       console.log('🎵 Artist names in Country table:', data.map(a => a.artist));
       setArtists(data);

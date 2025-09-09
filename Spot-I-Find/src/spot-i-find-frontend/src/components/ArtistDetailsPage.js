@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ArtistDetailsPage.css';
-import { fetchCountries, fetchArtistDetails } from '../utils/apiConfig';
+import { fetchArtistDetailsByName } from '../utils/apiConfig';
 
 const ArtistDetailsPage = ({ artist, country, onBack }) => {
   const [artistDetails, setArtistDetails] = useState([]);
@@ -21,46 +21,17 @@ const ArtistDetailsPage = ({ artist, country, onBack }) => {
       setLoading(true);
       setError(null);
 
-      // Test backend connectivity first
-      console.log('Testing backend connectivity...');
-      try {
-        await fetchCountries();
-        console.log('Backend connectivity test passed');
-      } catch (error) {
-        console.error('Backend connectivity test failed:', error);
-        setError('Cannot connect to backend server. Please check if the backend is running.');
-        setLoading(false);
-        return;
-      }
-
       const cleanedArtistName = cleanArtistName(artist);
       console.log('Loading artist details for:', cleanedArtistName);
 
-      // Get all artist details first
-      console.log('Fetching all artist details...');
-      let allArtistDetails;
-      try {
-        allArtistDetails = await fetchArtistDetails();
-        console.log('All artist details received:', allArtistDetails);
-      } catch (allError) {
-        console.error('Error fetching all artist details:', allError);
-        setError(`Failed to load artist details: ${allError.message}`);
-        setLoading(false);
-        return;
-      }
+      // Fetch artist details directly by name
+      const artistDetails = await fetchArtistDetailsByName(cleanedArtistName);
+      console.log('Artist details received:', artistDetails);
 
-      // Filter for the specific artist
-      const filteredDetails = allArtistDetails.filter(detail => {
-        const detailArtistName = detail.artistName || detail.artist || detail.id?.artistName;
-        return detailArtistName && detailArtistName.toLowerCase().includes(cleanedArtistName.toLowerCase());
-      });
-
-      console.log('Filtered artist details:', filteredDetails);
-
-      if (filteredDetails.length === 0) {
+      if (artistDetails.length === 0) {
         setError(`No songs found for "${cleanedArtistName}". Please check the artist name.`);
       } else {
-        setArtistDetails(filteredDetails);
+        setArtistDetails(artistDetails);
       }
     } catch (error) {
       console.error('Error loading artist details:', error);
