@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/artist-details")
+@CrossOrigin(origins = {"http://localhost:8080", "http://127.0.0.1:8080", "https://spot-i-find.vercel.app"})
 public class ArtistDetailController {
 
     private final ArtistDetailService service;
@@ -44,4 +45,8 @@ public class ArtistDetailController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @Options
+    public ResponseEntity<Void> handleOptions() {
+        return ResponseEntity.ok().build();
+    }
 }

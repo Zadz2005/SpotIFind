@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController//every method returns domain object rather than view
 @RequestMapping(path="api/v1/Country")
+@CrossOrigin(origins = {"http://localhost:8080", "http://127.0.0.1:8080", "https://spot-i-find.vercel.app"})
 public class CountryController {
     private final CountryService countryservice;
 
@@ -38,4 +39,8 @@ public class CountryController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 }
 
+    @Options
+    public ResponseEntity<Void> handleOptions() {
+        return ResponseEntity.ok().build();
+    }
 }
