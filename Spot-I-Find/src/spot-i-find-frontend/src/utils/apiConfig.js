@@ -1,5 +1,6 @@
 // API Configuration for Spot-I-Find Frontend
 // This file handles the backend API URL for different environments
+// Updated to use Railway production backend
 
 // Get the API URL from environment variables or use Railway production URL
 const API_BASE_URL = 'https://spot-i-find-production.up.railway.app';
